@@ -1,0 +1,22 @@
+{
+    "name": "intervention/message",
+    "description": "Quick flash message setup for Laravel",
+    "homepage": "http://intervention.io/",
+    "authors": [
+        {
+            "name": "Oliver Vogel",
+            "email": "oliver@olivervogel.net",
+            "homepage": "http://olivervogel.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Intervention\\Message\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
