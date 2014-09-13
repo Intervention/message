@@ -50,6 +50,11 @@ Message::add('This is my message.');
 echo Message::display();
 ```
 
+### Custom View
+
+You can create a local version of the view for customization by running the `publish` artisan command:
+
+    php artisan publish:views intervention/message
 
 ## License
 
