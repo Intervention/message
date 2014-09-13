@@ -2,6 +2,7 @@
     "name": "intervention/message",
     "description": "Quick flash message setup for Laravel",
     "homepage": "http://intervention.io/",
+    "license": "MIT",
     "authors": [
         {
             "name": "Oliver Vogel",
@@ -11,7 +12,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": ">=4.2.*"
+        "illuminate/support": "~5.0"
     },
     "autoload": {
         "psr-0": {
