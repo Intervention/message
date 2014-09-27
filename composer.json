@@ -15,8 +15,8 @@
         "illuminate/support": "~4|~5"
     },
     "autoload": {
-        "psr-0": {
-            "Intervention\\Message\\": "src/"
+        "psr-4": {
+            "Intervention\\Message\\": "src/Intervention/Message"
         }
     },
     "minimum-stability": "stable"
