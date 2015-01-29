@@ -13,4 +13,16 @@ class MessageServiceProviderLaravel4 extends ServiceProvider
 	{
 		$this->package('intervention/message');
 	}
+
+	/**
+	 * Register the service provider.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		$this->app['message'] = $this->app->share(function($app) {
+            return new Message;
+        });
+	}
 }

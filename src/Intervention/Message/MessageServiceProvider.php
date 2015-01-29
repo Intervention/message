@@ -48,9 +48,7 @@ class MessageServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['message'] = $this->app->share(function($app) {
-            return new Message;
-        });
+		$this->provider->register();
 	}
 
 	/**

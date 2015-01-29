@@ -19,4 +19,16 @@ class MessageServiceProviderLaravel5 extends ServiceProvider
 			__DIR__.'/../../views' => base_path('resources/views/vendor/message'),
 		));
 	}
+
+	/**
+	 * Register the service provider.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		$this->app['message'] = $this->app->share(function($app) {
+            return new Message;
+        });
+	}
 }
