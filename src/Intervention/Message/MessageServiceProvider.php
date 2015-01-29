@@ -12,13 +12,33 @@ class MessageServiceProvider extends ServiceProvider {
 	protected $defer = true;
 
 	/**
+     * Actual provider
+     *
+     * @var \Illuminate\Support\ServiceProvider
+     */
+    protected $provider;
+
+    /**
+     * Create a new service provider instance.
+     *
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @return void
+     */
+    public function __construct($app)
+    {
+        parent::__construct($app);
+
+        $this->provider = $this->getProvider();
+    }
+
+	/**
 	 * Bootstrap the application events.
 	 *
 	 * @return void
 	 */
 	public function boot()
 	{
-		$this->package('intervention/message');
+		$this->provider->boot();
 	}
 
 	/**
@@ -34,6 +54,22 @@ class MessageServiceProvider extends ServiceProvider {
 	}
 
 	/**
+     * Return ServiceProvider according to Laravel version
+     *
+     * @return \Intervention\Image\Provider\ProviderInterface
+     */
+    private function getProvider()
+    {
+        $app = $this->app;
+        $version = intval($app::VERSION);
+        $provider = sprintf(
+            '\Intervention\Validation\ValidationServiceProviderLaravel%d', $version
+        );
+
+        return new $provider($app);
+    }
+
+	/**
 	 * Get the services provided by the provider.
 	 *
 	 * @return array
@@ -42,5 +78,4 @@ class MessageServiceProvider extends ServiceProvider {
 	{
 		return array('message');
 	}
-
 }
