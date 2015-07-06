@@ -2,7 +2,7 @@
     <div id="{{ $id or 'message' }}">
         <ul>
             @foreach ($messages as $message)
-                <li>{{{ $message }}}</li>
+                <li>{{ $message }}</li>
             @endforeach
         </ul>
     </div>
