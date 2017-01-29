@@ -6,13 +6,7 @@ Quick and easy Flash Message setup for Laravel.
 
 Install Intervention Message with Composer.
 
-Require the package via Composer in your `composer.json`.
-
-    "intervention/message": "dev-master"
-
-Run Composer to update the new requirement.
-
-    $ composer update
+    $ composer require intervention/message
 
 The package is built to work with the Laravel Framework. The integration is done in seconds.
 
@@ -22,7 +16,7 @@ In the `$providers` array add the service providers for this package.
     
     'providers' => array(
 
-        'Intervention\Message\MessageServiceProvider'
+        Intervention\Message\MessageServiceProvider::class
 
     ),
     
@@ -33,7 +27,7 @@ Add the facade of this package to the `$aliases` array.
 
         ...
 
-        'Message' => 'Intervention\Message\Facades\Message'
+        'Message' => Intervention\Message\Facades\Message::class
 
     ),
 
@@ -54,10 +48,10 @@ echo Message::display();
 
 You can create a local version of the view for customization by running the `publish` artisan command:
 
-    php artisan publish:views intervention/message
+    php artisan vendor:publish --provider="Intervention\Message\MessageServiceProviderLaravel5"
 
 ## License
 
 Intervention Image is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-Copyright 2014 [Oliver Vogel](http://olivervogel.net/)
+Copyright 2014 [Oliver Vogel](http://olivervogel.com/)
