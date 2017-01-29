@@ -27,7 +27,7 @@ class MessageServiceProviderLaravel5 extends ServiceProvider
 	 */
 	public function register()
 	{
-		$app->singleton('message', function ($app) {
+		$this->app->singleton('message', function ($app) {
             return new Message;
         });
 	}
