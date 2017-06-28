@@ -19,5 +19,15 @@
             "Intervention\\Message\\": "src/Intervention/Message"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Intervention\\Message\\MessageServiceProvider"
+            ],
+            "aliases": {
+                "Message": "Intervention\\Message\\Facades\\Message"
+            }
+        }
+    },
     "minimum-stability": "stable"
 }
