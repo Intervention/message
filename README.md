@@ -1,4 +1,6 @@
-# Intervention Message
+> This package is **abandoned** and will no longer be maintained. I suggest using [Laravel's own flash data](https://laravel.com/docs/6.x/session#flash-data) methods to have the same functionality.
+
+# ~~Intervention Message~~ (Abandoned)
 
 Quick and easy Flash Message setup for Laravel.
 
